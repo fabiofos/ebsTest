@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
-import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
@@ -33,15 +31,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: function  tokenGetter() {
-             return     localStorage.getItem('token');},
-        whitelistedDomains: ['http://localhost:4200/'],
-        blacklistedRoutes: ['http://localhost:4200/auth/login']
-      }
-    })
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
